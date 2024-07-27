@@ -36,3 +36,6 @@ Models                  Views
 - Action --> Dispatcher --> Function handler
 
 Dispatcher: Là khi routes match với method nào tuyến dường là gì ví dụ http://localhost:3000/search 
+
+
+- Model 
