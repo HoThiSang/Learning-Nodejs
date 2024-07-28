@@ -10,9 +10,9 @@ router.get('/create', courseController.create);
 
 router.put('/:id', courseController.update);
 
-
 router.get('/:id/edit', courseController.edit);
 
+router.delete('/:id', courseController.destroy);
 
 router.get('/:slug', courseController.show);
 

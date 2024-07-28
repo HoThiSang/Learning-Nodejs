@@ -19,15 +19,12 @@ app.use(
 
 app.use(express.json());
 
-app.use(methodOverride('_method'))
-
+app.use(methodOverride('_method'));
 
 // Routes init
 route(app);
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-
 
 // HTTP
 app.use(morgan('combined'));
@@ -38,8 +35,8 @@ app.engine(
     handlebars.engine({
         extname: 'handlebars',
         helpers: {
-          sum: (a, b) => a + b,
-        }
+            sum: (a, b) => a + b,
+        },
     }),
 );
 app.set('view engine', 'handlebars');

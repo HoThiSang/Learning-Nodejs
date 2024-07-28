@@ -5,11 +5,12 @@ class MeController {
     // [GET] /course/:slug
     storedCourses(req, res, next) {
         Course.find({})
-        .then(courses => res.render('me/stored-courses', {
-                courses: mutipleMongooseToObject(courses),
-        }))
-        .catch(next);
-
+            .then((courses) =>
+                res.render('me/stored-courses', {
+                    courses: mutipleMongooseToObject(courses),
+                }),
+            )
+            .catch(next);
     }
 }
 
