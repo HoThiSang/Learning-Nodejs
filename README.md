@@ -39,3 +39,7 @@ Dispatcher: Là khi routes match với method nào tuyến dường là gì ví 
 
 
 - Model 
+
+Chúng ta đang làm việc với server side rendering
+
+Khi chúng ta bấm submit form data từ browser --> Web server --> Routes --> Dispatcher (Middleware) nó đứng ở giữa 
