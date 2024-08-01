@@ -19,6 +19,8 @@ app.use(
 
 app.use(express.json());
 
+console.log(typeof express.json())
+
 app.use(methodOverride('_method'));
 
 // Routes init

@@ -43,3 +43,13 @@ Dispatcher: Là khi routes match với method nào tuyến dường là gì ví 
 Chúng ta đang làm việc với server side rendering
 
 Khi chúng ta bấm submit form data từ browser --> Web server --> Routes --> Dispatcher (Middleware) nó đứng ở giữa 
+
+
+## Middleware : 
+- gọi là phần mềm trung gian ( đúng giữa các thành phần khác trong mô hình phần mền)
+
+Browser  ( Client) ================= Request ==================> Server (Node)
+|
+|
+|
+Browser  ( Client) <================= Response ================== Server (Node)

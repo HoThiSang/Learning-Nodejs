@@ -70,18 +70,8 @@ class CourseController {
                     .then(() => res.redirect('back'))
                     .catch(next);
                 break;
-            case 'forceDelete':
-                return this.forceDestroy(req, res, next);
-                break;
-
-            case'restore':
-                return this.restore(req, res, next);
-                break;
-
             default:
-                return this.update(req, res, next);
                 break;
-                  // update nếu không phải thực hiện delete, forceDelete, restore
         }
     }
 }
