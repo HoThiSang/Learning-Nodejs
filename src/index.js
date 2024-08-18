@@ -3,6 +3,9 @@ const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const handlebars = require('express-handlebars');
+
+const SortMiddleware = require('./app/middleware/SortMiddleware')
+
 const app = express();
 const port = 3000;
 
@@ -23,6 +26,9 @@ console.log(typeof express.json())
 
 app.use(methodOverride('_method'));
 
+// Custome middleware
+app.use(SortMiddleware);
+
 // Routes init
 route(app);
 
@@ -38,6 +44,28 @@ app.engine(
         extname: 'handlebars',
         helpers: {
             sum: (a, b) => a + b,
+            sortable: (field, sort) => {
+                const sortType =  field ===  sort.column ? sort.type : 'default';
+                
+                const icons = {
+                    default : 'fa-solid fa-sort',
+                    asc: 'fa-solid fa-sort-up',
+                    desc: 'fa-solid fa-sort-down',
+                }
+
+                const types = {
+                    default : 'desc',
+                    asc: 'desc',
+                    desc: 'asc',
+                }
+                const icon = icons[sortType];
+
+                const type = types[sortType] ;
+
+                return `<a href="?_sort&column=${ field }&type=${type}">
+                    <i class="${ icon }"></i>
+                </a>`
+            }
         },
     }),
 );
